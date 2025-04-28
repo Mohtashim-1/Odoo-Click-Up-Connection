@@ -1,0 +1,11 @@
+<odoo>
+    <record id="ir_cron_clickup_sync" model="ir.cron">
+        <field name="name">ClickUp Auto Sync</field>
+        <field name="model_id" ref="model_clickup_task"/>
+        <field name="state">code</field>
+        <field name="code">model.sync_tasks()</field>
+        <field name="interval_type">hours</field>
+        <field name="interval_number">6</field>
+        <field name="active">True</field>
+    </record>
+</odoo>

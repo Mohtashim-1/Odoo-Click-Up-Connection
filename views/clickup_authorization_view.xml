@@ -1,0 +1,11 @@
+<odoo>
+    <template id="clickup_authorization_success">
+        <h2>ClickUp Authorization</h2>
+        <p>The authorization was successful! You can now use ClickUp integration.</p>
+    </template>
+
+    <template id="clickup_authorization_failure">
+        <h2>ClickUp Authorization</h2>
+        <p>Authorization failed. Please try again.</p>
+    </template>
+</odoo>

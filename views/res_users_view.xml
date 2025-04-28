@@ -1,0 +1,23 @@
+<odoo>
+    <record id="view_users_form_clickup" model="ir.ui.view">
+        <field name="name">res.users.clickup.view</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <!-- Find the 'Access Rights' tab and insert after it -->
+            <xpath expr="//page[@name='access_rights']" position="after">
+                <page name="clickup_integration" string="ClickUp Integration">
+                    <group>
+                        <field name="clickup_client_id"/>
+                        <field name="clickup_client_secret"/>
+                        <field name="clickup_redirect_uri"/>
+                        <button name="action_authorize_clickup"
+                                string="Authorize ClickUp"
+                                type="object"
+                                class="btn-primary"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

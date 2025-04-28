@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Menu Item -->
+        <menuitem id="menu_clickup_root" name="ClickUp Integration" sequence="10"/>
+
+        <!-- Submenu -->
+        <menuitem id="menu_clickup_token" name="Tokens" parent="menu_clickup_root"/>
+
+        <!-- Action to Open Token List -->
+        <record id="action_clickup_token" model="ir.actions.act_window">
+            <field name="name">ClickUp Tokens</field>
+            <field name="res_model">clickup.token</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Attach Action to Menu -->
+        <menuitem id="menu_clickup_token_action"
+                  name="ClickUp Token Records"
+                  parent="menu_clickup_token"
+                  action="action_clickup_token"/>
+
+        <!-- Tree View -->
+        <record id="view_clickup_token_tree" model="ir.ui.view">
+            <field name="name">clickup.token.tree</field>
+            <field name="model">clickup.token</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="user_id"/>
+                    <field name="access_token"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_clickup_token_form" model="ir.ui.view">
+            <field name="name">clickup.token.form</field>
+            <field name="model">clickup.token</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="user_id"/>
+                        <field name="access_token"/>
+                        <field name="refresh_token"/>
+                    </group>
+                    <footer>
+                       
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

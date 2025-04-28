@@ -1,0 +1,7 @@
+<odoo>
+    <menuitem id="clickup_root" name="ClickUp" sequence="1"/>
+    <menuitem id="clickup_team_menu" name="Teams" parent="clickup_root" action="action_clickup_team"/>
+    <menuitem id="clickup_space_menu" name="Spaces" parent="clickup_root" action="action_clickup_space"/>
+    <menuitem id="clickup_list_menu" name="Lists" parent="clickup_root" action="action_clickup_list"/>
+    <menuitem id="clickup_task_menu" name="Tasks" parent="clickup_root" action="action_clickup_task"/>
+</odoo>
