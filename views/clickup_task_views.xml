@@ -1,0 +1,43 @@
+<odoo>
+  <record id="view_clickup_task_form" model="ir.ui.view">
+    <field name="name">clickup.task.form</field>
+    <field name="model">clickup.task</field>
+    <field name="arch" type="xml">
+      <form string="ClickUp Task">
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="task_id"/>
+            <field name="user_id"/>
+            <button name="action_fetch_teams"
+                    string="Fetch ClickUp Teams"
+                    type="object"
+                    class="btn-primary"/>
+          </group>
+          
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="view_clickup_task_tree" model="ir.ui.view">
+    <field name="name">clickup.task.tree</field>
+    <field name="model">clickup.task</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="task_id"/>
+        <field name="user_id"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="action_clickup_task" model="ir.actions.act_window">
+    <field name="name">ClickUp Tasks</field>
+    <field name="res_model">clickup.task</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem id="menu_clickup_root" name="ClickUp"/>
+  <menuitem id="menu_clickup_task" name="Tasks" parent="menu_clickup_root" action="action_clickup_task"/>
+</odoo>
