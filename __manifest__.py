@@ -8,9 +8,12 @@
     "depends": ["base"],
     "data": [
         'security/security.xml',
+        'security/ir.model.access.csv',
         "views/clickup_views.xml",
+        "views/clickup_team_views.xml",
         "views/res_users_view.xml",
         'views/clickup_authorization_view.xml',
+        'views/clickup_task_views.xml',
     ],
     "installable": True,
     "application": True,

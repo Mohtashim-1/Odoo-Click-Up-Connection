@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_clickup_task,access_clickup_task,model_clickup_task,base.group_user,1,1,1,0
+access_clickup_team,access_clickup_team,model_clickup_team,base.group_user,1,1,1,0
