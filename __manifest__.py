@@ -5,7 +5,7 @@
     "author": "Mohtashim",
     "category": "Tools",
     "summary": "Integrate ClickUp OAuth2 with Odoo",
-    "depends": ["base"],
+    "depends": ["base", 'web','project'],
     "data": [
         'security/security.xml',
         'security/ir.model.access.csv',
@@ -14,6 +14,9 @@
         "views/res_users_view.xml",
         'views/clickup_authorization_view.xml',
         'views/clickup_task_views.xml',
+        'views/clickup_space_view.xml',
+        'views/clickup_list_views.xml',
+        'views/clickup_folder_view.xml',
     ],
     "installable": True,
     "application": True,

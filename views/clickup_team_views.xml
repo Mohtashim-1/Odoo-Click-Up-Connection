@@ -27,6 +27,11 @@
                     string="Fetch Teams from ClickUp"
                     type="object"
                     class="btn btn-primary"/>
+            
+            <button name="action_fetch_spaces_from_clickup"
+                    string="Fetch Spaces"
+                    type="object"
+                    class="btn btn-primary"/>
           </group>
           <footer>
             

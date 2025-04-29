@@ -9,10 +9,10 @@
             <field name="name"/>
             <field name="task_id"/>
             <field name="user_id"/>
-            <button name="action_fetch_teams"
+            <!-- <button name="action_fetch_teams"
                     string="Fetch ClickUp Teams"
                     type="object"
-                    class="btn-primary"/>
+                    class="btn-primary"/> -->
           </group>
           
         </sheet>
