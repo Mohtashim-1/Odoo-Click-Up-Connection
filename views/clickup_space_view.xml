@@ -1,0 +1,47 @@
+<odoo>
+  <record id="view_clickup_space_tree" model="ir.ui.view">
+    <field name="name">clickup.space.tree</field>
+    <field name="model">clickup.space</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="space_id"/>
+        <field name="team_id"/>
+        <field name="user_id"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_clickup_space_form" model="ir.ui.view">
+    <field name="name">clickup.space.form</field>
+    <field name="model">clickup.space</field>
+    <field name="arch" type="xml">
+      <form string="ClickUp Space">
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="space_id"/>
+            <field name="team_id"/>
+            <field name="user_id"/>
+            <button name="action_fetch_lists_from_clickup"
+                    string="Fetch Lists from ClickUp"
+                    type="object"
+                    class="btn btn-primary"/>
+            <button name="action_fetch_folders_from_space"
+                    type="object"
+                    string="Fetch Folders"
+                    class="btn-primary"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_clickup_space" model="ir.actions.act_window">
+    <field name="name">ClickUp Spaces</field>
+    <field name="res_model">clickup.space</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem id="menu_clickup_space" name="Spaces" parent="menu_clickup_root" action="action_clickup_space"/>
+</odoo>
