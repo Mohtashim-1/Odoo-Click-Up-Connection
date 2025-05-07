@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="clickup_custom_task_kanban" model="ir.ui.view">
+    <field name="name">ClickUp Custom Task Kanban</field>
+    <field name="model">project.task</field>
+    <field name="arch" type="xml">
+      <kanban class="o_kanban_project_tasks" group_by="stage_id" default_group_by="stage_id">
+        <field name="name"/>
+        <field name="stage_id"/>
+        <field name="project_id"/>
+        <field name="user_ids"/>
+        <field name="color"/>
+        <field name="tag_ids"/>
+        <field name="activity_ids"/>
+        <field name="rating_ids"/>
+        <field name="state"/>
+        <field name="description"/>
+        <field name="displayed_image_id"/>
+
+        <templates>
+          <t t-name="kanban-box">
+            <div t-attf-class="oe_kanban_card #{kanban_color(record.color.raw_value)}" style="position: relative;">
+              <div class="oe_kanban_content" style="padding: 10px;">
+
+              
+
+                <!-- Cover Image Display -->
+                <t t-if="record.displayed_image_id.raw_value">
+                  <img t-att-src="'/web/image?model=project.task&amp;id=' + record.id.raw_value + '&amp;field=displayed_image_id'"
+                       style="width:100%; height:150px; object-fit:cover; border-radius:6px; margin-bottom:10px;" />
+                </t>
+
+                <!-- Task Name -->
+                <div style="font-size: 16px; font-weight: bold;">
+                  <a t-att-href="'/web#id=' + record.id.value + '&amp;model=project.task&amp;view_type=form'" target="_blank">
+                    <t t-esc="record.name.value"/>
+                  </a>
+                </div>
+
+                <!-- Description -->
+                <t t-if="record.description.value">
+                  <div class="o_text_overflow mt-2" style="font-size: 13px; color: #666;">
+                    <t t-esc="record.description.value"/>
+                  </div>
+                </t>
+
+                <!-- Tags -->
+                <div style="margin-top: 8px;">
+                  <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                </div>
+
+                <!-- Assigned Users -->
+                <div style="margin-top: 8px;">
+                  <field name="user_ids" widget="many2many_avatar_user"/>
+                </div>
+
+                <!-- Activities -->
+                <div style="margin-top: 8px;">
+                  <field name="activity_ids" widget="kanban_activity"/>
+                </div>
+
+                <!-- Rating -->
+                <div style="margin-top: 8px;">
+                  <field name="rating_ids" widget="rating"/>
+                </div>
+
+                <!-- Status badge only once -->
+                <t t-if="record.state.raw_value == '01_in_progress'">
+                  <div class="badge mt-2 bg-info text-white">In Progress</div>
+                </t>
+                <t t-if="record.state.raw_value == '02_changes_requested'">
+                  <div class="badge mt-2 bg-warning text-dark">Changes Requested</div>
+                </t>
+                <t t-if="record.state.raw_value == '03_approved'">
+                  <div class="badge mt-2 bg-success text-white">Approved</div>
+                </t>
+
+                <!-- Status update buttons -->
+                <div class="mt-2">
+                  <button type="object" name="set_in_progress" class="btn btn-sm btn-outline-info" style="margin-right:3px;">In Progress</button>
+                  <button type="object" name="set_changes_requested" class="btn btn-sm btn-outline-warning" style="margin-right:3px;">Changes Requested</button>
+                  <button type="object" name="set_approved" class="btn btn-sm btn-outline-success">Approved</button>
+                </div>
+
+              </div>
+            </div>
+          </t>
+        </templates>
+      </kanban>
+    </field>
+  </record>
+</odoo>

@@ -1,0 +1,41 @@
+.o_clickup_sidebar {
+    width: 220px;
+    background-color: #f9f9fc;
+    position: fixed;
+    height: 100%;
+    padding: 15px;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+.o_clickup_sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.o_clickup_sidebar ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.o_clickup_sidebar ul li a:hover {
+    background-color: #e6e6f3;
+}
+
+.o_clickup_sidebar_container {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-right: 1px solid #ccc;
+}
+
+.o_kanban_sidebar_layout {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 16px;
+}
+.o_kanban_sidebar_layout .o_kanban_record {
+    flex: 1 1 auto;
+}
