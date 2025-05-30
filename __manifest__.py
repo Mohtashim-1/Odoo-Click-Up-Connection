@@ -29,7 +29,9 @@
         'views/clickup_space_view.xml',
         'views/clickup_list_views.xml',
         'views/clickup_folder_view.xml',
-        'views/project_task_kanban_sidebar.xml'
+        'views/project_task_view.xml',
+        'views/clickup_cron.xml',
+        # 'views/project_task_kanban_sidebar.xml'
     ],
     "installable": True,
     "application": True,

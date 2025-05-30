@@ -1,0 +1,15 @@
+<odoo>
+  <record id="view_task_form_convert_lead" model="ir.ui.view">
+    <field name="name">project.task.convert.to.lead</field>
+    <field name="model">project.task</field>
+    <field name="inherit_id" ref="project.view_task_form2"/>
+    <field name="arch" type="xml">
+      <xpath expr="//header" position="inside">
+        <button name="action_convert_to_lead"
+                type="object"
+                string="Convert to Lead"
+                class="btn btn-primary"/>
+      </xpath>
+    </field>
+  </record>
+</odoo>
