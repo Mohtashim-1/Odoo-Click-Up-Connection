@@ -39,6 +39,6 @@
     ],
     "installable": True,
     "application": True,
-    "license": "MIT",
+    "license": "AGPL-3",
 
 }
