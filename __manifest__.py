@@ -1,6 +1,6 @@
 {
     "name": "ClickUp Integration",
-    "version": "1.0",
+    "version": "17.0.1.0.0",
     "technical_name": "clickup_integration",
     "author": "Mohtashim",
     "category": "Tools",
