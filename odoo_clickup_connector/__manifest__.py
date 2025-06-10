@@ -33,6 +33,12 @@
         'views/clickup_cron.xml',
         # 'views/project_task_kanban_sidebar.xml'
     ],
+    'images': [
+            "static/description/cover.png",
+            "static/description/icon.png",
+    ],
     "installable": True,
     "application": True,
+    "license": "MIT",
+
 }
